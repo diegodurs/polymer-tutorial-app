@@ -38,8 +38,10 @@
 
       <core-header-panel main>
         <core-toolbar>
-          <paper-icon-button icon="menu" core-drawer-toggle></paper-icon-button>
-          <span>{{appName}}</span>
+          <core-menu>
+            <paper-icon-button icon="menu" core-drawer-toggle></paper-icon-button>
+            <core-item icon="fa:music" label="Welcome to {{appName}}"></core-item>
+          </core-menu>
         </core-toolbar>
 
         <div class="hero-unit">
