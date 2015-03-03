@@ -22,22 +22,19 @@
 </head>
 
 <body unresolved>
-  <template is="auto-binding" id="app">
-    <core-header-panel>
-      <core-toolbar>
-        <paper-tabs id="tabs" selected="all" self-end>
-          <paper-tab name="all">All</paper-tab>
-          <paper-tab name="favorites">Favorites</paper-tab>
-        </paper-tabs>
-      </core-toolbar>
+  <core-header-panel>
+    <core-toolbar>
+      <paper-tabs id="tabs" selected="all" self-end>
+        <paper-tab name="all">All</paper-tab>
+        <paper-tab name="favorites">Favorites</paper-tab>
+      </paper-tabs>
+    </core-toolbar>
 
-      <div class="container" layout vertical center>
-        <post-list show="all"></post-list>
-      </div>
+    <div class="container" layout vertical center>
+      <post-list show="all"></post-list>
+    </div>
 
-    </core-header-panel>
-
-  </template>
+  </core-header-panel>
 
   <!-- build:js /scripts/app.js -->
   <script src="/scripts/app.js"></script>
