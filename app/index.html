@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>poly foo</title>
+  <title>Polymer Tutorial App</title>
   <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
   <!-- build:css /styles/main.css -->
@@ -21,37 +21,16 @@
   <!-- endreplace-->
 </head>
 
-<body unresolved fullbleed layout vertical>
+<body unresolved>
   <template is="auto-binding" id="app">
-
-    <core-drawer-panel>
-
-      <core-header-panel drawer>
-        <core-toolbar>Menu</core-toolbar>
-
-        <core-menu selected="0">
-          <core-item label="Yo"></core-item>
-          <core-item label="Polymer"></core-item>
-          <core-item label="App"></core-item>
-        </core-menu>
-      </core-header-panel>
-
-      <core-header-panel main>
-        <core-toolbar>
-          <core-menu>
-            <paper-icon-button icon="menu" core-drawer-toggle></paper-icon-button>
-            <core-item icon="fa:music" label="Welcome to {{appName}}"></core-item>
-          </core-menu>
-        </core-toolbar>
-
-        <div class="hero-unit">
-          <yo-greeting></yo-greeting>
-          <p>You now have</p>
-          <yo-list></yo-list>
-        </div>
-      </core-header-panel>
-
-    </core-drawer-panel>
+    <core-header-panel>
+      <core-toolbar>
+        <paper-tabs id="tabs" selected="all" self-end>
+          <paper-tab name="all">All</paper-tab>
+          <paper-tab name="favorites">Favorites</paper-tab>
+        </paper-tabs>
+      </core-toolbar>
+    </core-header-panel>
 
   </template>
 
