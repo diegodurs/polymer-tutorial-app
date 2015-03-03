@@ -60,7 +60,7 @@
   <script>
     (function () {
       Polymer({
-        // The publish object is another way to specify published properties, like the attributes attribute shown in Step 3. Here the favorite property defaults to false, and it reflects, meaning the favorite attribute is updated in the DOM whenever the property value changes.
+        // The publish object is another way to specify published properties, like the attributes attribute shown in Step 3.
         publish: {
           favorite: {
             value: false, // default value
@@ -69,6 +69,7 @@
         },
         favoriteTapped: function(event, detail, sender) {
           this.favorite = !this.favorite
+          this.fire('favorite-tap');
         }
       });
     })();

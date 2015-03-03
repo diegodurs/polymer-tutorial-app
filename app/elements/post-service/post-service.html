@@ -11,8 +11,11 @@
   <script>
     (function () {
       Polymer({
+        setFavorite: function(uid, isFavorite) {
+          console.log('Favorite changed: ' + uid + ", now: " + isFavorite);
+        },
         created: function() {
-          this.posts = [
+          var static_posts = [
             {
               "uid": 1,
               "text" : "Have you heard about the Web Components revolution?",
@@ -49,6 +52,8 @@
               "favorite": false
             }
           ]
+
+          this.posts = static_posts.slice(0) // make a copy
         }
       });
     })();

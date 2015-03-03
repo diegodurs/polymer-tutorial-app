@@ -22,7 +22,16 @@
     <div layout vertical center>
 
       <template repeat="{{post in posts}}">
-        <post-card>
+        <!--
+          favorite attribute required to have
+          two way data binding between the card
+          changes and the list.
+          I don't fully understand why this is required
+          and not by default ...
+        -->
+        <post-card
+          favorite="{{post.favorite}}"
+          on-favorite-tap="{{handleFavorite}}">
           <img src="{{post.avatar}}" width="70" height="70">
           <h2>{{post.username}}</h2>
           <p>{{post.text}}</p>
@@ -34,7 +43,12 @@
   <script>
     (function () {
       Polymer({
-        // define element prototype here
+        handleFavorite: function(event, detail, sender) {
+          var post = sender.templateInstance.model.post;
+          // this.$['service'] is set from the id attribute
+          // of <post-service id="service"> element
+          this.$.service.setFavorite(post.uid, post.favorite);
+        }
       });
     })();
   </script>
