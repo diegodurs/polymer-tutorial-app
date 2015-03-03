@@ -31,19 +31,45 @@
         border-radius: 50%;
         margin: 10px;
       }
+
+      core-icon-button {
+        position: absolute;
+        top: 3px;
+        right: 3px;
+        color: #636363;
+      }
+      :host([favorite]) core-icon-button {
+        color: #da4336;
+      }
     </style>
 
     <div class="card-header" layout horizontal center>
       <content select="img"></content>
       <content select="h2"></content>
     </div>
+
+    <core-icon-button
+      id="favicon"
+      icon="favorite"
+      on-tap="{{favoriteTapped}}">
+    </core-icon-button>
+
     <content></content>
   </template>
 
   <script>
     (function () {
       Polymer({
-        // define element prototype here
+        // The publish object is another way to specify published properties, like the attributes attribute shown in Step 3. Here the favorite property defaults to false, and it reflects, meaning the favorite attribute is updated in the DOM whenever the property value changes.
+        publish: {
+          favorite: {
+            value: false, // default value
+            reflect: true // two-way databinding
+          }
+        },
+        favoriteTapped: function(event, detail, sender) {
+          this.favorite = !this.favorite
+        }
       });
     })();
   </script>
