@@ -1,0 +1,56 @@
+<link rel="import" href="../../../bower_components/polymer/polymer.html">
+
+<polymer-element name="post-service" attributes="posts">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+  </template>
+  <script>
+    (function () {
+      Polymer({
+        created: function() {
+          this.posts = [
+            {
+              "uid": 1,
+              "text" : "Have you heard about the Web Components revolution?",
+              "username" : "Eric",
+              "avatar" : "http://lorempixel.com/70/70/people/",
+              "favorite": false
+            },
+            {
+              "uid": 2,
+              "text" : "Loving this Polymer thing.",
+              "username" : "Rob",
+              "avatar" : "http://lorempixel.com/70/70/people/",
+              "favorite": false
+            },
+              {
+              "uid": 3,
+              "text" : "So last year...",
+              "username" : "Dimitri",
+              "avatar" : "http://lorempixel.com/70/70/people/",
+              "favorite": false
+            },
+            {
+              "uid": 4,
+              "text" : "Pretty sure I came up with that first.",
+              "username" : "Ada",
+              "avatar" : "http://lorempixel.com/70/70/people/",
+              "favorite": false
+            },
+            {
+              "uid": 5,
+              "text" : "Yo, I heard you like components, so I put a component in your component.",
+              "username" : "Grace",
+              "avatar" : "http://lorempixel.com/70/70/people/",
+              "favorite": false
+            }
+          ]
+        }
+      });
+    })();
+  </script>
+</polymer-element>

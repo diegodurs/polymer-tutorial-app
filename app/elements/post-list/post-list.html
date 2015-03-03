@@ -1,6 +1,7 @@
 <link rel="import" href="../../../bower_components/polymer/polymer.html">
 
-<link rel="import" href="post-card/post-card.html">
+<link rel="import" href="../post-card/post-card.html">
+<link rel="import" href="../post-service/post-service.html">
 
 <polymer-element name="post-list" attributes="show">
   <template>
@@ -15,7 +16,6 @@
       }
     </style>
 
-    <!-- TODO add post-service element -->
     <post-service id="service" posts="{{posts}}">
     </post-service>
 
